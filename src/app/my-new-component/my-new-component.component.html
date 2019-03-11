@@ -1,0 +1,28 @@
+<button [disabled]="buttonStatus">My Button</button>
+
+<ul>
+  <li *ngFor="let arr of myArr">
+    {{arr}}
+  </li>
+  <li *ngIf="myArr">
+    yes i'm exist
+  </li>
+  <li *ngIf="myObject.age > 20 ">
+    I'm above 20
+  </li>
+</ul>
+
+<div *ngIf="myObject.age < 5; else otherTmpl ">
+  I'm under 5
+</div>
+<br>
+<div *ngIf="myObject.age > 5; then tmpl1 else otherTmpl ">
+  will not be shown in both cases
+</div>
+
+<ng-template #otherTmpl> I'm above 5</ng-template>
+<ng-template #tmpl1>tmpl1</ng-template>
+
+<img src="{{angularLogo}}">
+<img [src]="angularLogo">
+<img bind-src="angularLogo">
